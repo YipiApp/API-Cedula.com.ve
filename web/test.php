@@ -128,7 +128,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script>
       var myCallBack = function() {
         grecaptcha.render('recaptcha1', {
-          'sitekey' : '6LdeKwQTAAAAAIY0xUJxr3oVP7rJuwgb3y65Km9r', //Replace this with your Site key
+          'sitekey' : '<?php echo RECAPTCHAR_KEY; ?>', //Replace this with your Site key
           'theme' : 'light'
         });
       };
