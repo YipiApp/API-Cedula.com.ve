@@ -805,6 +805,7 @@ ul.phone {
 }
 }
 @media (max-width:1024px){
+#forkMeGitHub{display:none}
 .header {
 	min-height: 600px;
 }

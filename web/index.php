@@ -91,6 +91,14 @@
 				   	     <p>Podrá saber el RIF de las personas, aún cuando esta no se haya registrado en el Seniat y no lo tenga todavía.</p>
 				   	 </div>
 				    </article>
+				    <article style="position: relative; width: 100%; opacity: 1;"> 
+				   	   <div class="banner-wrap">
+				   	     <h2>Sistema de distribución gratuita bajo GPLv3</h2>  
+				   	     <p>Nuestro sistema puede ser copiado y distribuido totalmente Gratis bajo la licencia GPLv3</p>
+				   	     <p>Pude obtenerlo libremente desde nuestro repositorio en <a href="https://github.com/DesarrollosCuado/API-Cedula.com.ve" target="_blank">GitHub</a></p>
+						  <h3><span class="m_1">Cuado C.A. Siempre contribuira al progreso del Pais.</span></h3>
+				   	 </div>
+				    </article>
 				 </div>
 				<a class="wmuSliderPrev">Anterior</a><a class="wmuSliderNext">Siguiente</a>
             </div>
