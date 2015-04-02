@@ -1,0 +1,7 @@
+Descargar el archivo RE nacional.zip ubicado en 
+
+http://www.cne.gov.ve/web/registro_electoral_descarga/abril2012/nacional.php
+
+Link directo: http://www.cne.gov.ve/web/registro_electoral_descarga/abril2012/00/nacional.zip
+
+Importar el archivo csv a la tabla registro_civil utilizando su manejador de preferencia.
