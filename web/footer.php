@@ -18,6 +18,7 @@
 				<li><a href="baja.php" rel="nofollow">Sacar mi Cédula del Sistema</a></li>
 				<li><a href="http://wiki.cedula.com.ve/index.php/Documentaci%C3%B3n_del_API_Cedula:Limitaci%C3%B3n_general_de_responsabilidad" target="_blank">Aviso Legal</a></li>
 				<li><a href="http://wiki.cedula.com.ve/index.php/Documentaci%C3%B3n_del_API_Cedula:Pol%C3%ADtica_de_protecci%C3%B3n_de_datos" target="_blank">Política de protección de datos</a></li>
+				<li><a href="https://github.com/DesarrollosCuado/API-Cedula.com.ve" target="_blank">Este Sistema se ejecuta bajo licencía GPL</a></li>
 			</ul>
 		</div>
 		<div class="col-md-4">
