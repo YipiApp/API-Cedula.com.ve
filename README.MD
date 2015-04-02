@@ -23,3 +23,6 @@ Para mayor información puede ingresar a http://cedula.com.ve/ o http://wiki.ced
 
 Todo el software publicado se puede distribuir y utilizar bajo Licencia GPLv3 - Ver GPL.md
 
+## Publicación formal del sistema
+
+Se realizara en el Congreso Nacional de Software Libre - Edo. Aragua, Venezuela. Programada para el dia 11 de Abril del 2015.
