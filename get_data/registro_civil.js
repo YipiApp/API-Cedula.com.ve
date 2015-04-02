@@ -1,3 +1,10 @@
+/**
+* Api de Consultas de Cedulas Venezolanas - Script para obtener una cedula del Registro Civil
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
 /*
 	Este algoritmo es utilizado para obtener las cedulas
 	que no estan en el REP de febrero 2012
