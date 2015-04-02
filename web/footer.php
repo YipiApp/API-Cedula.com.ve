@@ -6,6 +6,7 @@
 * @copyright 2015 Kijam.com
 * @license   GPLv3
 */
+    include_once ("./lib/classDBAndUser.php");
 ?>
     <div class="clearfix"> </div>
     <br /><br />

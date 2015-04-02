@@ -18,7 +18,7 @@
                     <li><span>Ext.: 12 $ x 6 Meses</span></li>
                     <li><a href="login.php">30 consultas por Hora</a></li>
                     <li><a href="login.php">Incluye Nombre Completo</a></li>
-                    <li><a href="login.php">No Incluye RIF</a></li>
+                    <li><a href="login.php">Incluye RIF</a></li>
                     <li><a href="login.php">99.9% Uptime</a></li>
                 </ul>
                 <a class="order-btn" href="login.php">Comprar Ya</a>
