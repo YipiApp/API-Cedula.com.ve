@@ -100,9 +100,9 @@
 						$consulta_api = getCI($_POST['vat']);
 						if($consulta_api)
 						{
-							$_POST['name'] = $consulta_api['primer_nombre']." ".$consulta_api['primer_apellido'].($consulta_api['segundo_apellido']?" ".$consulta_api['segundo_apellido']:"");
-							if($consulta_api['cne_estado'])
-								$_POST['address'] = $consulta_api['cne_estado'].", ".$consulta_api['cne_municipio'].", ".$consulta_api['cne_parroquia'];
+							$_POST['name'] = $consulta_api['primer_nombre']." ".$consulta_api['primer_apellido'].(isset($consulta_api['segundo_apellido'])?" ".$consulta_api['segundo_apellido']:"");
+							if($consulta_api['cne'])
+								$_POST['address'] = $consulta_api['cne']['estado'].", ".$consulta_ap['cne']i['municipio'].", ".$consulta_api['cne']['parroquia'];
 						}
 					}
 				} else {
