@@ -25,4 +25,4 @@ Todo el software publicado se puede distribuir y utilizar bajo Licencia GPLv3 - 
 
 ## Publicación formal del sistema
 
-Se realizara en el Congreso Nacional de Software Libre - Edo. Aragua, Venezuela. Programada para el dia 11 de Abril del 2015.
+La publicación formal del sistema sera realizado en el Congreso Nacional de Software Libre - Edo. Aragua, Venezuela. Programada para el día 11 de Abril del 2015 a las 03:00pm en "Av Bolívar Sector la Romana Edificio INCES". Te Esperamos!
