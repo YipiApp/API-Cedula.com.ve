@@ -11,6 +11,8 @@ API - Sistema completo para puesta en funcionamiento del sitio web Cedula.com.ve
 
 - Registro Civil, directorio 'get_data'.
 
+- Codigos de ejemplos para consultar el API, directorio 'client_example'.
+
 ## Sobre los Autores
 
 V1.0 – Creado por Kijam Lopez B. Desarrollador de https://cuado.co/
