@@ -1,9 +1,23 @@
 API - Sistema completo para puesta en funcionamiento del sitio web Cedula.com.ve
+==========================
 
-Se incluye Servidor de Consultas (API) y Sistema de Cobros para MercadoPago y Paypal.
+## Sobre el contenido del Repositorio
+
+- Servidor de Consultas (API), directorio 'server'.
+
+- Sistema de Cobros para MercadoPago y Paypal, directorio 'web'.
+
+- Estructura de la Base de Datos, directorio 'sql'.
+
+- Registro Civil, directorio 'get_data'.
+
+## Sobre los Autores
 
 V1.0 – Creado por Kijam Lopez B. Desarrollador de https://cuado.co/
 
 Para mayor información puede ingresar a http://cedula.com.ve/ o http://wiki.cedula.com.ve/
 
-Licencia GPLv3 - Ver GPL.md
+## Sobre el Uso y Licencia
+
+Todo el software publicado se puede distribuir y utilizar bajo Licencia GPLv3 - Ver GPL.md
+
