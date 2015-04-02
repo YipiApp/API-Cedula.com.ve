@@ -3,7 +3,7 @@
 * Api de Consultas de Cedulas Venezolanas - Header
 *
 * @author    Kijam Lopez <klopez@cuado.co>
-* @copyright 2015 Kijam.com
+* @copyright 2015 Desarrollos Cuado C.A.
 * @license   GPLv3
 */
 ?><!DOCTYPE HTML>
