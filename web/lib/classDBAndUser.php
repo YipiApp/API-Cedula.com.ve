@@ -1,4 +1,4 @@
-<?php<?php 
+<?php
 /**
 * Api de Consultas de Cedulas Venezolanas
 * - Consulta de Base de datos

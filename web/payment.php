@@ -12,7 +12,7 @@
 
     $isLogin = User::authSession();
     if(!$isLogin) {
-        header('location: login.php');
+        header('location: login.php?nologin');
         exit;
     }
     $user = $_SESSION['user'];
@@ -66,7 +66,7 @@
             $id_service,
             secInjection($plan_db['currency']),
             secInjection('0.0'),
-            secInjection('N/A'),
+            secInjection('SuperUser-'.time()),
             date('Y-m-d H:i:s', strtotime('+'.$plan_db['periocidad'].' month')),
             secInjection(print_r($_POST, true))
         ));

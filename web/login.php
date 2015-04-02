@@ -109,7 +109,7 @@
                         {
                             $_POST['name'] = $consulta_api['primer_nombre']." ".$consulta_api['primer_apellido'].(isset($consulta_api['segundo_apellido'])?" ".$consulta_api['segundo_apellido']:"");
                             if($consulta_api['cne'])
-                                $_POST['address'] = $consulta_api['cne']['estado'].", ".$consulta_ap['cne']i['municipio'].", ".$consulta_api['cne']['parroquia'];
+                                $_POST['address'] = $consulta_api['cne']['estado'].", ".$consulta_ap['cne']['municipio'].", ".$consulta_api['cne']['parroquia'];
                         }
                     }
                 } else {

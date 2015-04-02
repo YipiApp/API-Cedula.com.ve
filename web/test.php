@@ -1,4 +1,11 @@
 <?php
+/**
+* Api de Consultas de Cedulas Venezolanas - Modulo de 'Pruébalo Gratis'
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
 
     include_once ("./lib/classDBAndUser.php");
     if($_POST['vat']) {
