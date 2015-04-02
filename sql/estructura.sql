@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `api_planes` (
   `periocidad` int(11) NOT NULL,
   `max_request_per_hour` int(11) DEFAULT NULL,
   `show_names` tinyint(1) NOT NULL,
-  `show_fecha_nac` tinyint(1) NOT NULL,
   `show_rif` tinyint(1) NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_plan`)
