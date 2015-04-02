@@ -13,6 +13,9 @@
     if($mp_op_id) {
         $result = validateMercadoPago($mp_op_id);
 
+        if(!$result || !isset($result['order_id']))
+            exit;
+
         email(ADMIN_EMAIL, 'IPN Mercadopago', print_r($_POST, true).print_r($result, true));
 
         $custom = preg_split('/-/', $result['order_id']);

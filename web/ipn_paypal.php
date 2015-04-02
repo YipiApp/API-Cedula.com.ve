@@ -14,9 +14,8 @@
     else
         $verify_url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_notify-validate&' . http_build_query( $_POST );
 
-    email(ADMIN_EMAIL, 'IPN Paypal', print_r($_POST, true));
-
     if (file_get_contents($verify_url) == 'VERIFIED') {
+		email(ADMIN_EMAIL, 'IPN Paypal', print_r($_POST, true));
         if(isset($_POST['custom']) && (PAYPAL_SANDBOX || !((bool)$_POST['test_ipn'])) && $_POST['receiver_email'] == PAYPAL_EMAIL) {
             $custom = preg_split('/-/', $_POST['custom']);
             $id_usuario  = (int)$custom[1];
