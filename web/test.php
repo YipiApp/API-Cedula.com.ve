@@ -108,11 +108,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="heading"><span>Datos Encontrados</span></div>
         <div class="col-md-12">
             <div class="col-md-6"><b>Nombre</b></div><div class="col-md-5"><?php echo $user['primer_nombre']; ?> <?php echo isset($user['segundo_nombre'])?$user['segundo_nombre']:""; ?> <?php echo $user['primer_apellido']; ?> <?php echo isset($user['segundo_apellido'])?$user['segundo_apellido']:""; ?></div>
-            <?php if($user['cne_parroquia']) { ?>
-            <div class="col-md-6"><b>Estado donde Vota</b></div><div class="col-md-5"><?php echo $user['cne_estado']; ?></div>
-            <div class="col-md-6"><b>Municipio donde Vota</b></div><div class="col-md-5"><?php echo $user['cne_municipio']; ?></div>
-            <div class="col-md-6"><b>Parroquia donde Vota</b></div><div class="col-md-5"><?php echo $user['cne_parroquia']; ?></div>
-            <div class="col-md-6"><b>Centro Electoral</b></div><div class="col-md-5"><?php echo $user['centro_electoral']; ?></div>
+            <?php if($user['cne']) { ?>
+            <div class="col-md-6"><b>Estado donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['estado']; ?></div>
+            <div class="col-md-6"><b>Municipio donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['municipio']; ?></div>
+            <div class="col-md-6"><b>Parroquia donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['parroquia']; ?></div>
+            <div class="col-md-6"><b>Centro Electoral</b></div><div class="col-md-5"><?php echo $user['cne']['centro_electoral']; ?></div>
             <?php } ?>
         </div>
         <?php

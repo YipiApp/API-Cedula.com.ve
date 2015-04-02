@@ -27,6 +27,4 @@
     define('API_CEDULA_APP_ID', '');
     define('API_CEDULA_APP_TOKEN', '');
 
-
-
     define('GOOGLE_ANALYTICS_KEY', 'UA-XXXXXX-X');
