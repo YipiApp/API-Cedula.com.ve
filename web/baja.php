@@ -4,10 +4,12 @@
 	if (isset($_POST['cedula']) && isset($_POST['nacionalidad']) && validCed($_POST['cedula']))
 	{
 		if(!checkRecaptchar(RECAPTCHAR_SECRET, $_POST['g-recaptcha-response']))
-			$error = 'reCAPTCHA Invalido';
+			$error = 'reCAPTCHA inválido';
 		else {
 			$rif = valid_rif($_POST['nacionalidad'], trim($_POST['cedula']));
-			if(($data = $db->ls("SELECT * FROM not_show WHERE rif = '%s'", array(secInjection($rif)))))
+			if(!$rif)
+				$error = 'Su cedula tiene un formato inválido';
+			else if(($data = $db->ls("SELECT * FROM not_show WHERE rif = '%s'", array(secInjection($rif)))))
 				$error = 'Esta cedula ya fue dado de baja el dia '.$data['created_date'];
 			else if($db->qs("INSERT INTO not_show (rif, created_date, ip_submit) VALUES ('%s', NOW(), '%s')", array(secInjection($rif), getRealIP())))
 				$msj = "Su cedula fue dado de baja de nuestro sistema correctamente";
