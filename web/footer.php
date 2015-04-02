@@ -1,4 +1,12 @@
-
+<?php 
+/**
+* Api de Consultas de Cedulas Venezolanas - Footer
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
+?>
     <div class="clearfix"> </div>
     <br /><br />
     <div class="clearfix"> </div>

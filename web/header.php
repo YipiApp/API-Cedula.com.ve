@@ -1,4 +1,12 @@
-<!DOCTYPE HTML>
+<?php 
+/**
+* Api de Consultas de Cedulas Venezolanas - Header
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
+?><!DOCTYPE HTML>
 <html>
 <head>
     <title><?php echo $html_title; ?> - Consultas de Cédulas Venezolanas</title>

@@ -1,5 +1,14 @@
-<?php
-
+<?php<?php 
+/**
+* Api de Consultas de Cedulas Venezolanas
+* - Consulta de Base de datos
+* - Manejo de Usuarios
+* - Funciones Utilitarias
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
     //error_reporting(0);
     error_reporting(E_ERROR | E_WARNING | E_PARSE);
     if(isset($_POST['PHPSESSID'])) session_id($_POST['PHPSESSID']);

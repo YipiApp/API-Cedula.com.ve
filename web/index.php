@@ -1,4 +1,11 @@
 <?php
+/**
+* Api de Consultas de Cedulas Venezolanas - Index
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
     $html_title = 'API';
     $html_description = 'API de Consulta de Cédulas Venezolanas. Ya no tendrá que transcribir todos los nombres de las personas que compren en su tienda, con sólo consultar este API podrá tener todos los datos del cliente. Agilice sus ventas, ahorre tiempo y disminuya las colas de las cajas.';
     $html_tags_header = '

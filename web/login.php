@@ -1,4 +1,11 @@
 <?php
+/**
+* Api de Consultas de Cedulas Venezolanas - Panel de Control
+*
+* @author    Kijam Lopez <klopez@cuado.co>
+* @copyright 2015 Kijam.com
+* @license   GPLv3
+*/
     include_once ("./lib/classDBAndUser.php");
 
     $user = false;
