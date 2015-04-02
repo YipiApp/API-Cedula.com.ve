@@ -65,6 +65,10 @@
 		header('location: login.php');
 	}
 	
+	$html_title = 'Plataforma de Pago';
+	$html_description = 'Plataforma de pago';
+	$menu_select = 'login';
+	
 	include('header.php');
 ?>
 
