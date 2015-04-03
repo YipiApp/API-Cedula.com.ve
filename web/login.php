@@ -130,10 +130,11 @@
                             if($consulta_api)
                             {
                                 $_POST['name'] = $consulta_api['primer_nombre']." ".$consulta_api['primer_apellido'].(isset($consulta_api['segundo_apellido'])?" ".$consulta_api['segundo_apellido']:"");
-                                if($consulta_api['cne'])
+                                if(isset($consulta_api['cne']))
                                     $_POST['address'] = $consulta_api['cne']['estado'].", ".$consulta_ap['cne']['municipio'].", ".$consulta_api['cne']['parroquia'];
                             }
-                        }else{
+                        }
+                        if(!isset($_POST['name']) && $isRif) {
                             $consulta_seniat = getRifSeniat($_POST['vat'], true);
                             if($consulta_seniat && $consulta_seniat['ok'] && $consulta_seniat['result']['name'])
                                 $_POST['name'] = preg_replace('/[^0-9a-zA-ZñÑáéíóúÁÉÍÓÚ., ]+/', '', $consulta_seniat['result']['name']);
