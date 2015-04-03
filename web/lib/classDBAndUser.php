@@ -859,7 +859,7 @@
             "ZW" => "Zimbabwe");
         if($iso) 
             return $c[$iso];
-		return $c;
+        return $c;
     }
 
     function getGeoip()
