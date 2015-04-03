@@ -414,7 +414,7 @@
 
     function validName($str)
     {
-        return preg_match("/^[a-zA-ZñÑáéíóúÁÉÍÓÚ., ]+$/",$str);
+        return preg_match("/^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ., ]+$/",$str);
     }
     function validVat($str)
     {
@@ -426,11 +426,11 @@
     }
     function validVatVE($str)
     {
-        return preg_match("/^[VJEGPvjegp]{0,1}-?[0-9]{6,8}(-?[0-9]{1}){0,1}$/",$str);
+        return preg_match("/^[VJEGP]{0,1}-?[0-9]{6,8}(-?[0-9]{1}){0,1}$/",$str);
     }
     function validVatVE_J($str)
     {
-        return preg_match("/^[JGP]{1}-[0-9]{8}-[0-9]{1}$/",$str);
+        return preg_match("/^[VEJGP]{1}-?[0-9]{8}-?[0-9]{1}$/",$str);
     }
 
     function validAddress($str)
@@ -992,7 +992,7 @@
         return isset($res['data']) && $res['data']?$res['data']:false;
     }
 
-    function ajax_get_rif_seniat($rif, $return_result = false) {
+    function getRifSeniat($rif, $return_result = false) {
         $rif = strtoupper(preg_replace("/[ ,_-]+/", "", $rif));
         try {
             $rawXml = getCurlData('http://contribuyente.seniat.gob.ve/getContribuyente/getrif?rif='.$rif);
@@ -1004,20 +1004,20 @@
                 if($xml) {
                     $result = array(
                         "rif"=>$rif,
-                        "name"=>preg_replace("/\([^\)]*\)/", "", (string)$xml->{"Nombre"}),
+                        "name"=>trim(preg_replace("/\([^\)]*\)/", "", (string)$xml->{"Nombre"})),
                         "agente_retencion"=>((string)$xml->{"AgenteRetencionIVA"})=="SI",
                         "contribuyente_iva"=>((string)$xml->{"ContribuyenteIVA"})=="SI",
                         "contribuyente_tasa"=>floatval((string)$xml->{"Tasa"})
                     );
-                    $result_rif = json_encode(array("ok"=>true,"result"=>$result));
+                    $result_rif = array("ok"=>true,"result"=>$result);
                 }else{
-                    $result_rif = json_encode(array("ok"=>false,"error"=>htmlentities($rawXml)));
+                    $result_rif = array("ok"=>false,"error"=>htmlentities($rawXml));
                 }
             }else{
-                $result_rif =  json_encode(array("ok"=>false,"error"=>htmlentities(lang("sales_remote_access_failed2"))));
+                $result_rif =  array("ok"=>false,"error"=>htmlentities(lang("sales_remote_access_failed2")));
             }
         }catch(Exception $e)  {
-            $result_rif = json_encode(array("ok"=>false,"error"=>htmlentities(lang("sales_remote_access_failed"))));
+            $result_rif = array("ok"=>false,"error"=>htmlentities(lang("sales_remote_access_failed")));
         }
         if($return_result) return $result_rif;
         else echo $result_rif;
