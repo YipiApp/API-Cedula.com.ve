@@ -248,33 +248,10 @@
 
         static function authSession()
         {
-            $isAuth = false;
-
             if (!isset($_SESSION['id_usuario']) || intval($_SESSION['id_usuario']) <1)
                 return false;
-
             $_SESSION['user'] = User::getUserByID(intval($_SESSION['id_usuario']));
-
-            if ($_SESSION['user'] instanceof CUser)
-            {
-                $t1=User::getUserByID($_SESSION['user']->id);
-                $t2=User::getUserByUsername($_SESSION['user']->user);
-                $t3=User::getUserByMail($_SESSION['user']->mail);
-
-                if ($t1 instanceof CUser && $t2 instanceof CUser && $t3 instanceof CUser)
-                {
-                    $isAuth=     $t1->id==$t2->id &&
-                                $t1->id == $t3->id &&
-                                $t1->id == $_SESSION['user']->id &&
-                                $t1->pass == $t2->pass &&
-                                $t1->pass == $t3->pass &&
-                                $t1->pass == $_SESSION['user']->pass;
-                }
-            }
-            else
-                $isAuth=false;
-
-            return $isAuth;
+            return $_SESSION['user'] instanceof CUser;
         }
 
         static function generateRandomPassword($length)
@@ -332,15 +309,15 @@
 
                 if ($db->qs("INSERT INTO api_usuarios (user,pass,mail,name,rol,vat,address,country,phone) VALUES ('%s','%s','%s','%s','%d','%s','%s','%s','%s')", array
                 (
-                strtolower(secInjection($us->user)),
-                md5($us->pass . strtolower($us->user) . User::$keySecurity),
-                strtolower(secInjection($us->mail)),
-                secInjection($us->name),
-                intval($us->rol),
-                secInjection($us->vat),
-                secInjection($us->address),
-                secInjection($us->country),
-                secInjection($us->phone)
+                    strtolower(secInjection($us->user)),
+                    md5($us->pass . strtolower($us->user) . User::$keySecurity),
+                    strtolower(secInjection($us->mail)),
+                    secInjection($us->name),
+                    intval($us->rol),
+                    secInjection($us->vat),
+                    secInjection($us->address),
+                    secInjection($us->country),
+                    secInjection($us->phone)
                 )))
                     return OK;
                 else
@@ -362,17 +339,17 @@
                 if ($pass == null)
                     return $db->qs("UPDATE api_usuarios SET rol = '%d', mail = '%s' WHERE id_usuario=%d;", array
                     (
-                    intval($rol),
-                    strtolower(secInjection($mail)),
-                    intval($id)
+                        intval($rol),
+                        strtolower(secInjection($mail)),
+                        intval($id)
                     ));
                 else
                     return $db->qs("UPDATE api_usuarios SET rol = '%d', mail = '%s', pass = '%s' WHERE id_usuario=%d;", array
                     (
-                    intval($rol),
-                    strtolower(secInjection($mail)),
-                    md5($pass . $r->user . User::$keySecurity),
-                    intval($id)
+                        intval($rol),
+                        strtolower(secInjection($mail)),
+                        md5($pass . $r->user . User::$keySecurity),
+                        intval($id)
                     ));
             }
             return E_USER_NOT_EXIST;
@@ -470,7 +447,7 @@
 
             $mensaje.="<b>" . ereg_replace("_", " ", $nombre) . "</b> = " . $valor . "<br>\n";
         }
-*/
+
         foreach ($_FILES as $vAdjunto)
         {
             if ($vAdjunto["size"] > 0)
@@ -496,6 +473,7 @@
                 fclose ($oFichero);
             }
         }
+*/
 
         if ($bHayFicheros)
             $mensaje.=$sAdjuntos . "\n\n----_Separador-de-mensajes_----\n";
