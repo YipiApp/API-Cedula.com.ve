@@ -26,9 +26,9 @@
     if(!isset($_GET['id_plan']) || (int)$_GET['id_plan'] < 1)
         $error = 'Debe seleccionar un plan.';
 
-	$country = getGeoip();
-	if($_GET['currency'] == 'VEF' && ($user->country != 'VE' || $country != 'VE'))
-		$error = 'Se ha detectado que usted se encuentra en '.getCountries($user->country != 'VE'?$user->country:$country).', usted sólo puede pagar en U$D.';
+    $country = getGeoip();
+    if($_GET['currency'] == 'VEF' && ($user->country != 'VE' || $country != 'VE'))
+        $error = 'Se ha detectado que usted se encuentra en '.getCountries($user->country != 'VE'?$user->country:$country).', usted sólo puede pagar en U$D.';
 
     if($_GET['id_service'])
         $service = $db->ls("SELECT * FROM api_invoices INNER JOIN api_services ON api_invoices.id_service = api_services.id_service WHERE api_services.id_usuario = %d AND api_services.id_service = %d ORDER BY date_created DESC LIMIT 1", array($user->id, (int)$_GET['id_service']));
