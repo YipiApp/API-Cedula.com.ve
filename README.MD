@@ -21,7 +21,7 @@ Para mayor información puede ingresar a http://cedula.com.ve/ o http://wiki.ced
 
 ## Sobre el Uso y Licencia
 
-Todo el software publicado se puede editar, distribuir y utilizar bajo Licencia GPLv3 - Ver GPL.md
+Todo el software publicado se puede editar, distribuir y utilizar solo bajo los terminos de la Licencia GPLv3 - Ver GPL.md
 
 ## Publicación formal del sistema
 
