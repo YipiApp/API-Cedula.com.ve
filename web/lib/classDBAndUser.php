@@ -863,7 +863,7 @@
     {
         if (!isset($_SESSION['country']))
         {
-            $json = @json_decode(@file_get_contents('http://freegeoip.net/json/'.getRealIP()), true);
+            $json = @json_decode(@file_get_contents(SERVER_GEOIP.getRealIP()), true);
             if (isset($json['country_code']))
             {
                 $_SESSION['country'] = $json['country_code'];

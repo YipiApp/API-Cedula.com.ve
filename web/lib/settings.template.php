@@ -29,3 +29,5 @@
     define('API_CEDULA_APP_TOKEN', '');
 
     define('GOOGLE_ANALYTICS_KEY', 'UA-XXXXXX-X');
+	
+    define('SERVER_GEOIP', 'http://freegeoip.net/json/');
