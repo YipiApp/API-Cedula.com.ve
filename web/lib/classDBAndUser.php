@@ -606,8 +606,8 @@
         return $select;
     }
 
-    function getCountries(){
-        return array(
+    function getCountries($iso = false){
+        $c = array(
             "AF" => "Afghanistan",
             "AX" => "Åland Islands",
             "AL" => "Albania",
@@ -857,6 +857,9 @@
             "YE" => "Yemen",
             "ZM" => "Zambia",
             "ZW" => "Zimbabwe");
+        if($iso) 
+            return $c[$iso];
+		return $c;
     }
 
     function getGeoip()

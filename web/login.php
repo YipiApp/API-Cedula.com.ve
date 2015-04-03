@@ -106,8 +106,8 @@
                             case 'E':
                             case 'P':
                             case 'V':
-                                if(!validVatVE_J($_POST['vat']))
-                                    $error .= '- El R.I.F. suministrado tiene un formato invalido, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
+                                if(!validVatVE_J($_POST['vat']) || !valid_rif($_POST['vat'][0], substr($_POST['vat'], 1)))
+                                    $error .= '- El R.I.F. suministrado es invalido o no existe, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
                                 $isRif = true;
                                 break;
                         }
@@ -169,7 +169,7 @@
                             case 'E':
                             case 'P':
                             case 'V':
-                                if(!validVatVE_J($_POST['vat']))
+                                if(!validVatVE_J($_POST['vat']) || !valid_rif($_POST['vat'][0], substr($_POST['vat'], 1)))
                                     $error .= '- El R.I.F. suministrado es invalido o no existe, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
                                 break;
                         }
@@ -236,8 +236,9 @@
                         $error = 'Ocurrió un error interno registrando su cuenta, intente más tarde.';
                 }
             }else if($_GET['op']=='new_app'){
-                if($_POST['currency'] == 'VEF' && ($user->country != 'VE' || getGeoip() != 'VE'))
-                    $error = 'Se ha detectado que usted no está residenciado en Venezuela, usted sólo puede pagar en U$D.';
+                $country = getGeoip();
+                if($_POST['currency'] == 'VEF' && ($user->country != 'VE' || $country != 'VE'))
+                    $error = 'Se ha detectado que usted se encuentra en '.getCountries($user->country != 'VE'?$user->country:$country).', usted sólo puede pagar en U$D.';
 
                 if(!$error)
                     header('location: payment.php?id_plan='.$_POST['id_plan'].'&currency='.$_POST['currency']);
