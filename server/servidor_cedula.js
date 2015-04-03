@@ -11,15 +11,15 @@ var https = require('https');
 var url = require('url');
 
 var db = {
-        user : '',
-        password : '',
-        database: '',
-        socketPath: '/var/run/mysqld/mysqld.sock'
-    };
+    user : '',
+    password : '',
+    database: '',
+    socketPath: '/var/run/mysqld/mysqld.sock'
+};
 
 var options = {
-  key: fs.readFileSync('ssl.key'),
-  cert: fs.readFileSync('ssl.crt')
+    key: fs.readFileSync('ssl.key'),
+    cert: fs.readFileSync('ssl.crt')
 };
 
 function getConnection(mysql, db_config, cb) {
