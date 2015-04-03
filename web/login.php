@@ -93,26 +93,26 @@
                 if(strlen($_POST['country']) != 2 || !isset($countries[$_POST['country']]))
                     $error = '- Su País de origen es requerido<br />';
 
-				$isRif = false;
+                $isRif = false;
 
                 if($_POST['country'] == 'VE') {
-					$_POST['vat'] = strtoupper(trim(preg_replace('/[\. -]+/', '', $_POST['vat'])));
-					if(strlen($_POST['vat']) < 6 || !validVatVE($_POST['vat']))
-						$error .= '- Su identificación fiscal no tiene un formato válido para Venezuela<br />';
-					else {
-						switch($_POST['vat'][0]){
-							case 'J':
-							case 'G':
-							case 'E':
-							case 'P':
-							case 'V':
-								if(!validVatVE_J($_POST['vat']))
-									$error .= '- El R.I.F. suministrado tiene un formato invalido, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
-								$isRif = true;
-								break;
-						}
-					}
-				}
+                    $_POST['vat'] = strtoupper(trim(preg_replace('/[\. -]+/', '', $_POST['vat'])));
+                    if(strlen($_POST['vat']) < 6 || !validVatVE($_POST['vat']))
+                        $error .= '- Su identificación fiscal no tiene un formato válido para Venezuela<br />';
+                    else {
+                        switch($_POST['vat'][0]){
+                            case 'J':
+                            case 'G':
+                            case 'E':
+                            case 'P':
+                            case 'V':
+                                if(!validVatVE_J($_POST['vat']))
+                                    $error .= '- El R.I.F. suministrado tiene un formato invalido, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
+                                $isRif = true;
+                                break;
+                        }
+                    }
+                }
 
                 if(!checkRecaptchar(RECAPTCHAR_SECRET, $_POST['g-recaptcha-response']))
                     $error = '- reCAPTCHA Inválido<br />';
@@ -122,22 +122,22 @@
                     $_SESSION['valid_register'] = $_POST['country'];
                     if($_POST['country'] == 'VE')
                     {
-						if(!$isRif || $_POST['vat'][0] == 'V' || $_POST['vat'][0] == 'E') {
-							$cedula = $_POST['vat'];
-							if($isRif)
-								$cedula = substr($cedula, 1, strlen($cedula) - 2) * 1;
-							$consulta_api = getCI($cedula);
-							if($consulta_api)
-							{
-								$_POST['name'] = $consulta_api['primer_nombre']." ".$consulta_api['primer_apellido'].(isset($consulta_api['segundo_apellido'])?" ".$consulta_api['segundo_apellido']:"");
-								if($consulta_api['cne'])
-									$_POST['address'] = $consulta_api['cne']['estado'].", ".$consulta_ap['cne']['municipio'].", ".$consulta_api['cne']['parroquia'];
-							}
-						}else{
-							$consulta_seniat = getRifSeniat($_POST['vat'], true);
-							if($consulta_seniat && $consulta_seniat['ok'] && $consulta_seniat['result']['name'])
-								$_POST['name'] = preg_replace('/[^0-9a-zA-ZñÑáéíóúÁÉÍÓÚ., ]+/', '', $consulta_seniat['result']['name']);
-						}
+                        if(!$isRif || $_POST['vat'][0] == 'V' || $_POST['vat'][0] == 'E') {
+                            $cedula = $_POST['vat'];
+                            if($isRif)
+                                $cedula = substr($cedula, 1, strlen($cedula) - 2) * 1;
+                            $consulta_api = getCI($cedula);
+                            if($consulta_api)
+                            {
+                                $_POST['name'] = $consulta_api['primer_nombre']." ".$consulta_api['primer_apellido'].(isset($consulta_api['segundo_apellido'])?" ".$consulta_api['segundo_apellido']:"");
+                                if($consulta_api['cne'])
+                                    $_POST['address'] = $consulta_api['cne']['estado'].", ".$consulta_ap['cne']['municipio'].", ".$consulta_api['cne']['parroquia'];
+                            }
+                        }else{
+                            $consulta_seniat = getRifSeniat($_POST['vat'], true);
+                            if($consulta_seniat && $consulta_seniat['ok'] && $consulta_seniat['result']['name'])
+                                $_POST['name'] = preg_replace('/[^0-9a-zA-ZñÑáéíóúÁÉÍÓÚ., ]+/', '', $consulta_seniat['result']['name']);
+                        }
                     }
                 } else {
                     unset($_SESSION['valid_register']);
@@ -159,22 +159,22 @@
                     $error .= '- Su identificación fiscal sólo puede tener caracteres alfanuméricos<br />';
 
                 if($_SESSION['valid_register'] == 'VE') {
-					$_POST['vat'] = strtoupper(trim(preg_replace('/[\. -]+/', '', $_POST['vat'])));
-					if(strlen($_POST['vat']) < 6 || !validVatVE($_POST['vat']))
-						$error .= '- Su identificación fiscal no tiene un formato válido para Venezuela<br />';
-					else {
-						switch($_POST['vat'][0]){
-							case 'J':
-							case 'G':
-							case 'E':
-							case 'P':
-							case 'V':
-								if(!validVatVE_J($_POST['vat']))
-									$error .= '- El R.I.F. suministrado es invalido o no existe, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
-								break;
-						}
-					}
-				}
+                    $_POST['vat'] = strtoupper(trim(preg_replace('/[\. -]+/', '', $_POST['vat'])));
+                    if(strlen($_POST['vat']) < 6 || !validVatVE($_POST['vat']))
+                        $error .= '- Su identificación fiscal no tiene un formato válido para Venezuela<br />';
+                    else {
+                        switch($_POST['vat'][0]){
+                            case 'J':
+                            case 'G':
+                            case 'E':
+                            case 'P':
+                            case 'V':
+                                if(!validVatVE_J($_POST['vat']))
+                                    $error .= '- El R.I.F. suministrado es invalido o no existe, debe tener [VEJGEP] + 9 digitos exactos, si su rif tiene menos de nueve digitos completar con 0 a la izquierda. Ejemplo: J000012345<br />';
+                                break;
+                        }
+                    }
+                }
 
                 if(strlen($_POST['user']) < 3 || !validUsername($_POST['user']))
                     $error .= '- El usuario debe tener al menos cuatro caracteres y el primer caracter no puede ser un número<br />';
