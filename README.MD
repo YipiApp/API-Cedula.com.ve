@@ -15,7 +15,7 @@ API - Sistema completo para puesta en funcionamiento del sitio web Cedula.com.ve
 
 ## Sobre los Autores
 
-V1.0 – Creado por Kijam Lopez B. Desarrollador de https://cuado.co/
+V1.0 – Creado por Kijam López B. Desarrollador de https://cuado.co/
 
 Para mayor información puede ingresar a http://cedula.com.ve/ o http://wiki.cedula.com.ve/
 
