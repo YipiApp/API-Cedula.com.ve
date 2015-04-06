@@ -4,4 +4,6 @@ http://www.cne.gov.ve/web/registro_electoral_descarga/abril2012/nacional.php
 
 Link directo: http://www.cne.gov.ve/web/registro_electoral_descarga/abril2012/00/nacional.zip
 
-Importar el archivo csv a la tabla registro_civil utilizando su manejador de preferencia.
+Importar el archivo csv a la tabla registro_civil utilizando su manejador de preferencia. Los códigos del centro de votación con su Estado, Municipio y Parroquia se encuentran en centros.sql
+
+Para el cálculo del RIF se debe utilizar el algoritmo mostrado en registro_civil.js

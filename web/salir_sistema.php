@@ -33,9 +33,9 @@
 <?php if($error) echo '<div class="alert alert-danger" role="alert">'.$error.'</div>'; ?>
 <?php if($msj) echo '<div class="alert alert-success" role="alert">'.$msj.'</div>'; ?>
 <br />
- <div class="heading"><span>Sacar mi Cedula del Sistema</span></div>
+ <div class="heading"><span>No mostrar mi Cédula en el Sistema</span></div>
     <div class="heading"></div>
-    <div class="col-md-12">Aunque los datos mostrados por el sistema son públicos, entendemos que hay usuarios que no quieren facilitar el acceso a esta información; por lo cual hemos previsto un mecanismo de fácil acceso que la desincorpora de nuestra API, <b>pero de igual forma esta información seguirá visible en los sistemas informáticos del gobierno (CNE, jefaturas a nivel nacional, etc.)</b> ya que se considera un acto ilegal ocultar o remover alguna persona en particular del registro civil (según dicta la ley). Desarrollos Cuado C.A. es una empresa autónoma e independiente al gobierno actual y por ende es técnicamente imposible poder alterar cualquier sistema electrónico que preste el gobierno de la República Bolivariana de Venezuela.
+    <div class="col-md-12">Aunque los datos mostrados por el sistema son públicos, entendemos que hay usuarios que no quieren facilitar el acceso a esta información; por lo cual hemos previsto un mecanismo de fácil para que nuestro API no muestre sus datos publicos, <b>pero de igual forma esta información seguirá visible en los sistemas informáticos del gobierno como la del CNE</b> ya que se considera un acto ilegal ocultar o remover alguna persona en particular del registro civil (según dicta la ley). Desarrollos Cuado C.A. es una empresa autónoma e independiente al gobierno actual y por ende es técnicamente imposible poder alterar cualquier sistema electrónico que preste el gobierno de la República Bolivariana de Venezuela.
         Para mayor información le recomendamos leer nuestro <a href="http://wiki.cedula.com.ve/index.php/Documentaci%C3%B3n_del_API_Cedula:Limitaci%C3%B3n_general_de_responsabilidad" target="_blank">Aviso Legal</a> y  <a href="http://wiki.cedula.com.ve/index.php/Documentaci%C3%B3n_del_API_Cedula:Pol%C3%ADtica_de_protecci%C3%B3n_de_datos" target="_blank">Política de protección de datos</a>.
         <br /><br />
     </div>
