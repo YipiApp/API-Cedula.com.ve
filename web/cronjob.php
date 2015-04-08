@@ -73,11 +73,11 @@
                 $plan_db = $user?$db->ls("SELECT planes.*, precios.* FROM api_planes planes INNER JOIN api_precio_planes precios ON planes.id_plan = precios.id_plan WHERE precios.currency = '%s' AND precios.id_plan = '%d'".($user->rol==1?'':' AND planes.activo = 1'), array(secInjection($result['currency']), (int)$id_plan), true):false;
 
                 if($result['status'] == 'Completed'){
-                    email($user->mail, 'Pago Aceptado', 'Su pago fue aceptado y ya fue creado su APP para poder disfrutar de nuestro servicios, ingrese a "Mi Cuenta" en http://cedula.com.ve/ para mayor información.');
+                    email($user->mail, 'Pago Aceptado', 'Su pago fue aceptado y ya fue creado su APP para poder disfrutar de nuestro servicios, ingrese a "Registro / Login" en http://cedula.com.ve/ para mayor información.');
                     $db->qs("UPDATE api_services SET activo = 1, proximo_corte = '%s' WHERE id_service = %d", array($id_plan, date('Y-m-d H:i:s', strtotime('+'.$plan_db['periocidad'].' month', strtotime($service['proximo_corte']))), $id_service));
                     $db->qs("UPDATE api_invoices SET payment_status = 'completed', log_payment = '%s' WHERE id_invoice = %d", array(secInjection($result['message']), $invoice['id_invoice']));
                 }else{
-                    email($user->mail, 'Error en el Pago', 'Su pago fue rechazado por Mercadopago, ingrese a "Mi Cuenta" en http://cedula.com.ve/ y vuelva a realizar su pedido para reintentar la compra.');
+                    email($user->mail, 'Error en el Pago', 'Su pago fue rechazado por Mercadopago, ingrese a "Registro / Login" en http://cedula.com.ve/ y vuelva a realizar su pedido para reintentar la compra.');
                     $db->qs("UPDATE api_invoices SET payment_status = 'rejected', log_payment = '%s' WHERE id_invoice = %d", array(secInjection($result['message']), $invoice['id_invoice']));
                 }
             }

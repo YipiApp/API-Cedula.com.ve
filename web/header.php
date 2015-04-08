@@ -6,7 +6,12 @@
 * @copyright 2015 Desarrollos Cuado C.A.
 * @license   GPLv3
 */
-?><!DOCTYPE HTML>
+?><!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--><!DOCTYPE HTML>
 <html>
 <head>
     <title><?php echo $html_title; ?> - Consultas de Cédulas Venezolanas</title>
@@ -16,7 +21,7 @@
     <meta name="description" content="<?php echo $html_description; ?>" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <?php if($menu_select == 'baja') echo '<meta name="robots" content="nofollow" />';    ?>
+    <?php if($menu_select == 'baja') echo '<meta name="robots" content="nofollow" />'; ?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="shortcut icon" type="image/png" href="images/icon.png"/>

@@ -8,24 +8,24 @@
 */
     include_once ("./lib/classDBAndUser.php");
 
-    if (isset($_POST['cedula']) && isset($_POST['nacionalidad']) && validCed($_POST['cedula']))
+    if (isset($_POST['cedula']) && isset($_POST['nacionalidad']))
     {
         if(!checkRecaptchar(RECAPTCHAR_SECRET, $_POST['g-recaptcha-response']))
             $error = 'reCAPTCHA inválido';
         else {
             $rif = valid_rif($_POST['nacionalidad'], trim($_POST['cedula']));
             if(!$rif)
-                $error = 'Su cedula tiene un formato inválido';
+                $error = 'Su cédula tiene un formato inválido';
             else if(($data = $db->ls("SELECT * FROM not_show WHERE rif = '%s'", array(secInjection($rif)))))
-                $error = 'Esta cedula ya fue dado de baja el dia '.$data['created_date'];
+                $error = 'Esta cédula ya fue dado de baja el día '.$data['created_date'];
             else if($db->qs("INSERT INTO not_show (rif, created_date, ip_submit) VALUES ('%s', NOW(), '%s')", array(secInjection($rif), getRealIP())))
-                $msj = "Su cedula fue dado de baja de nuestro sistema correctamente";
+                $msj = "Su cédula fue dado de baja de nuestro sistema correctamente";
             else
-                $error = "Ocurrio un error temporal en nuestro sistema, intente mas tarde";
+                $error = "Ocurrió un error temporal en nuestro sistema, intente más tarde";
         }
     }
-    $html_title = 'Baja';
-    $html_description = 'Sacar cedula del Sistema';
+    $html_title = 'Baja de Cédula en el Sistema';
+    $html_description = 'No mostrar una Cédula en el Sistema';
     $menu_select = 'baja';
     include('header.php');
 ?>

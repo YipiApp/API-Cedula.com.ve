@@ -14,7 +14,7 @@
         else{
             $consulta = getCI($_POST['vat'], true);
             if(!$consulta)
-                $error = 'Ocurrio un error con la comunicacion del servidor';
+                $error = 'Ocurrio un error en el servidor';
         }
     }
     function prettyPrint( $json )
@@ -78,8 +78,7 @@ Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+--><!DOCTYPE HTML>
 <html>
 <head>
 <title>DEMO - API - Consultas de Cedulas Venezolanas</title>
