@@ -31,11 +31,30 @@
     $html_show_body = false;
     include('header.php');
 ?>
+<div class="modal fade in" id="showCNSL">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">CNSL 2015</h4>
+      </div>
+      <div class="modal-body">
+        <p>El sistema sera presentado de manera formal en el <a href="http://www.cnsl.org.ve/?page_id=218" target="_blank">Congreso Nacional de Software Libre - Edo. Aragua, Venezuela</a>. 
+        Programada para el día 11 de Abril del 2015 a las 03:00pm en "Av Bolívar Sector la Romana Edificio INCES". Si tienes dudas de nuestro sistema te estaremos esperando!
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>$("#showCNSL").modal('show'); </script>
 <div class="header">
    <div class="container">
       <div class="header_top">
           <div class="header-left">
-             <div class="logo" onclick="window.location.href='index.html'">
+             <div class="logo" onclick="window.location.href='index.php'">
                 <img src="images/logo-cedula2.png" alt=""/>
                 <div class="textLogo">Cédula</div>
              </div>
