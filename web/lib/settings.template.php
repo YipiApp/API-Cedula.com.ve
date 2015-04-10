@@ -29,5 +29,20 @@
     define('API_CEDULA_APP_TOKEN', '');
 
     define('GOOGLE_ANALYTICS_KEY', 'UA-XXXXXX-X');
-	
+    
     define('SERVER_GEOIP', 'http://freegeoip.net/json/');
+    
+    //E-Mail Sender: php, smtp
+    define('EMAIL_SENDER', 'php');
+    define('EMAIL_FROM_MAIL', 'no-reply@'.$_SERVER['SERVER_NAME']);
+    define('EMAIL_FROM_NAME', 'API-Cedula');
+    
+    //Configuracion de SMTP
+    define('EMAIL_SMTP_AUTH', false);
+    define('EMAIL_SMTP_USER', '');
+    define('EMAIL_SMTP_PASS', '');
+    define('EMAIL_SMTP_HOST', '');
+    define('EMAIL_SMTP_PORT', 25);
+    define('EMAIL_SMTP_CRYPT', false); // false, 'tls' o 'ssl'
+    
+    

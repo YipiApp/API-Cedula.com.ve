@@ -26,6 +26,7 @@
     define("PATH",str_replace('//','/',dirname(__FILE__)));
 
     include(PATH.'/settings.php');
+    include(PATH.'/smtp/PHPMailerAutoload.php');
 
     $uri = preg_split('/\?/', $_SERVER['REQUEST_URI']);
     define("ACTUAL_URL", sprintf('%s://%s%s',
@@ -431,56 +432,37 @@
         $dom=$dm[1];
         return filter_var($str, FILTER_VALIDATE_EMAIL) && gethostbyname($dom) != $dom;
     }
-    function email($para, $asunto, $mensaje = "", $de = "API Cedulas-VE <no-reply@cedula.com.ve>")
+    function email($para, $asunto, $mensaje = false, $from_name = false, $from_mail = false)
     {
-        $sCabeceras="From: ". ($de==""?($_SERVER['SERVER_NAME']." <info@".$_SERVER['SERVER_NAME']):$de)."\r\nReply-To: ".($de==""?($_SERVER['SERVER_NAME']." <info@".$_SERVER['SERVER_NAME']):$de)."\r\nX-Mailer: PHP/" . phpversion() . "\r\nMIME-version: 1.0\r\n";
-        $sCabeceras.="X-Priority: 1 (Higuest)\r\n";
-        $sCabeceras.="X-MSMail-Priority: High\r\n";
-        $sCabeceras.="Importance: High\r\n";
-        $bHayFicheros=0;
-        $mensaje .= '<br /><br /><br /><br />--<br />Atentamente,<br />Sistema Automatizado de consultas de Cedulas Venezolanas<br />Cedula.com.ve';
-/*
-        foreach ($_POST as $nombre => $valor)
-        {
-            if ($nombre == "captcha")
-                continue;
+        if (!$from_name)
+            $from_name = EMAIL_FROM_NAME;
 
-            $mensaje.="<b>" . ereg_replace("_", " ", $nombre) . "</b> = " . $valor . "<br>\n";
+        if (!$from_mail)
+            $from_mail = EMAIL_FROM_MAIL;
+
+        $mail = new PHPMailer();
+        
+        if(EMAIL_SENDER == 'mail'){
+            $mail->isMail();
+        }else{
+            $mail->isSMTP();
+            $mail->Host = EMAIL_SMTP_HOST;
+            $mail->SMTPAuth = EMAIL_SMTP_AUTH;
+            $mail->Username = EMAIL_SMTP_USER;
+            $mail->Password = EMAIL_SMTP_PASS;
+            if(EMAIL_SMTP_CRYPT)
+                $mail->SMTPSecure = EMAIL_SMTP_CRYPT;
+            $mail->Port = EMAIL_SMTP_PORT;
         }
-
-        foreach ($_FILES as $vAdjunto)
-        {
-            if ($vAdjunto["size"] > 0)
-            {
-                if ($bHayFicheros == 0)
-                {
-                    $bHayFicheros=1;
-                    $sCabeceras.="Content-type: multipart/mixed;";
-                    $sCabeceras.="boundary=\"--_Separador-de-mensajes_--\"\n";
-                    $sCabeceraTexto="----_Separador-de-mensajes_--\n";
-                    $sCabeceraTexto.="Content-type: text/html;charset=utf-8\n";
-                    $sCabeceraTexto.="Content-transfer-encoding: 7BIT\n";
-                    $mensaje=$sCabeceraTexto . $mensaje;
-                }
-
-                $sAdjuntos.="\n\n----_Separador-de-mensajes_--\n";
-                $sAdjuntos.="Content-type: " . $vAdjunto["type"] . ";name=\"" . $vAdjunto["name"] . "\"\n";
-                $sAdjuntos.="Content-Transfer-Encoding: BASE64\n";
-                $sAdjuntos.="Content-disposition: attachment;filename=\"" . $vAdjunto["name"] . "\"\n\n";
-                $oFichero  =fopen($vAdjunto["tmp_name"], 'r');
-                $sContenido=fread($oFichero, filesize($vAdjunto["tmp_name"]));
-                $sAdjuntos.=chunk_split(base64_encode($sContenido));
-                fclose ($oFichero);
-            }
-        }
-*/
-
-        if ($bHayFicheros)
-            $mensaje.=$sAdjuntos . "\n\n----_Separador-de-mensajes_----\n";
-        else
-            $sCabeceras.="Content-type: text/html;charset=utf-8\n";
-
-        return mail($para, $asunto, $mensaje, $sCabeceras);
+        
+        $mail->From = $from_mail;
+        $mail->FromName = $from_name;
+        $mail->addAddress($para);
+        $mail->isHTML(true);
+        $mail->Subject = $asunto;
+        $mail->Body = $mensaje;
+        
+        return $mail->send();
     }
     function strleft($s1, $s2) { return substr($s1, 0, strpos($s1, $s2)); }
     function selfURL() {
