@@ -25,4 +25,4 @@ Todo el software publicado se puede editar, distribuir y utilizar solo bajo los 
 
 ## Publicación formal del sistema
 
-La publicación formal del sistema fue realizado en el Congreso Nacional de Software Libre - Edo. Aragua, Venezuela. Programada para el día 11 de Abril del 2015 a las 03:00pm en "Av Bolívar Sector la Romana Edificio INCES".
+La publicación formal del sistema fue realizado en el Congreso Nacional de Software Libre - Edo. Aragua, Venezuela. Programada para el día 11 de Abril del 2015 a las 03:00pm en "Av Bolívar Sector la Romana Edificio INCES". Laminas: http://es.slideshare.net/KijamLpez/11vo-cnsl-aragua-venezuela-como-ganar-dinero-con-software-libre
