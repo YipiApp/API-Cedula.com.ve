@@ -11,25 +11,25 @@
     $html_description = 'Los precios el bolivares sólo aplican para los residentes en Venezuela (I.V.A. incluido), para el resto del mundo aplica tarifa internacional en dolares.';
     $menu_select = 'precios';
     include('header.php');
-	
-	$planes_db = $db->ls("SELECT planes.*, precios.* FROM api_planes planes INNER JOIN api_precio_planes precios ON planes.id_plan = precios.id_plan".(User::isAdmin()?'':' AND planes.activo = 1'), array(), false);
+    
+    $planes_db = $db->ls("SELECT planes.*, precios.* FROM api_planes planes INNER JOIN api_precio_planes precios ON planes.id_plan = precios.id_plan".(User::isAdmin()?'':' AND planes.activo = 1'), array(), false);
 
-	$planes = array();
-	$planes_precios = array();
-	foreach($planes_db as $plan){
-		$planes_precios[$plan['id_plan']][$plan['currency']] = $plan;
-		$name = preg_split("/ - /",  $plan['nombre']);
-		$planes[$plan['id_plan']] = $name[0];
-	}
+    $planes = array();
+    $planes_precios = array();
+    foreach($planes_db as $plan){
+        $planes_precios[$plan['id_plan']][$plan['currency']] = $plan;
+        $name = preg_split("/ - /",  $plan['nombre']);
+        $planes[$plan['id_plan']] = $name[0];
+    }
 ?>
    <div class="plans-head">
        <div class="heading"><span>Precios del API</span></div>
        <div>Los precios marcados con las siglas <b>"Ven."</b> sólo aplican para los residentes en Venezuela (I.V.A. incluido), para el resto del mundo aplica tarifa <b>"Ext."</b></div>
 
        <div class="heading"></div>
-		<?php
-		foreach($planes as $id_plan => $plan) {
-		?>
+        <?php
+        foreach($planes as $id_plan => $plan) {
+        ?>
         <div class="col-md-3">
             <div class="pricing-table-grid">
                 <h3><?php echo $plan; ?></h3>
@@ -44,9 +44,9 @@
                 <a class="order-btn" href="login.php">Comprar Ya</a>
             </div>
          </div>
-		<?php
-		}
-		?>
+        <?php
+        }
+        ?>
         <div class="clearfix"> </div>
    </div>
 <?php

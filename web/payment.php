@@ -44,6 +44,16 @@
 
     if(!$error && !$plan_db)
         $error = 'El plan seleccionado no existe o no se encuentra activo para la venta en este momento.';
+    
+    if(!$error && !User::isAdmin() && $plan_db['amount'] < 0.01) {
+        $other_free = $db->ls("SELECT * FROM api_invoices 
+                INNER JOIN api_services ON api_invoices.id_service = api_services.id_service
+                WHERE api_services.id_service != '%d' AND api_services.id_usuario = '%d'
+                      AND api_services.proximo_corte > NOW()",
+                array($service?(int)$service['id_service']:0, (int)$user->id));
+        if($other_free)
+            $error = 'Usted ya tene otro APP gratuito vigente hasta el '.$other_free['proximo_corte'].', solo puede registrar uno.';
+    }
 
     if(!$error && (User::isAdmin() || $plan_db['amount'] < 0.01)){
         $id_service = false;
