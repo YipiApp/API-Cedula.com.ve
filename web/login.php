@@ -73,7 +73,7 @@
                         $newPassword = User::generateRandomPassword(8);
                         if(User::updateUser($userForgot->id, $userForgot->rol, $userForgot->mail, $newPassword)){
                             $msj = 'Se le envió un correo electrónico con su nueva clave.';
-                            email($userForgot->mail, 'Nueva Clave', 'Sr. '.$userForgot->name.',<br /><br />Su nueva clave de ingreso al sistema es: <b>'.$newPassword.'</b>');
+                            email($userForgot->mail, 'Nueva Clave', 'Sr(a). '.$userForgot->name.',<br /><br />Su nueva clave de ingreso al sistema es: <b>'.$newPassword.'</b>');
                         }else{
                             $error = 'Ocurrió un error interno, intente más tarde.';
                         }
@@ -191,7 +191,7 @@
                     $result = User::addUser($_POST);
                     if($result == OK) {
                         $msj = 'Se le envió un correo electrónico, debe revisarlo para completar el registro.';
-                        email($_POST['mail'], 'Confirmación de Registro', 'Sr. '.$_POST['name'].',<br /><br />Para completar el registro haga click en el siguiente link: '.ACTUAL_URL.'?op=validate&user='.$_POST['user'].'&token='.md5($_POST['user'].SEMILLA_NEW_USER).'</b>');
+                        email($_POST['mail'], 'Confirmación de Registro', 'Sr(a). '.$_POST['name'].',<br /><br />Para completar el registro haga click en el siguiente link: '.ACTUAL_URL.'?op=validate&user='.$_POST['user'].'&token='.md5($_POST['user'].SEMILLA_NEW_USER).'</b>');
                         unset($_POST);
                         $_POST = array();
                         unset($_SESSION['valid_register']);

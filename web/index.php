@@ -25,13 +25,14 @@
                 removalDelay: 300,
                 mainClass: "my-mfp-zoom-in"
         });
+        //$("#showCNSL").modal("show"); 
     });
     </script>';
     $menu_select = 'index';
     $html_show_body = false;
     include('header.php');
 ?>
-<div class="modal fade in" id="showCNSL">
+<!-- <div class="modal fade" id="showCNSL">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -46,10 +47,9 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<script>$("#showCNSL").modal('show'); </script>
+    </div>
+  </div>
+</div> -->
 <div class="header">
    <div class="container">
       <div class="header_top">
