@@ -72,11 +72,12 @@
             $id_service = (int)$db->id();
         }
         $db->qs("INSERT INTO api_invoices (id_service,currency,amount,payment_name,payment_status,payment_reference,date_created,date_expire,log_payment) VALUES
-                        ('%d','%s','%s','superuser','completed','%s',NOW(),'%s','%s')", array
+                        ('%d','%s','%s','%s','completed','%s',NOW(),'%s','%s')", array
         (
             $id_service,
             secInjection($plan_db['currency']),
             secInjection('0.0'),
+            secInjection(User::isAdmin()?'suerpuser':'gratis'),
             secInjection((User::isAdmin()?'SuperUser-':'Gratis-').time()),
             date('Y-m-d H:i:s', strtotime('+'.$plan_db['periocidad'].' month')),
             secInjection(print_r($_POST, true))
