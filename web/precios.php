@@ -34,8 +34,8 @@
             <div class="pricing-table-grid">
                 <h3><?php echo $plan; ?></h3>
                 <ul>
-                    <li><span>Ven.: <?php echo $planes_precios[$id_plan]['VEF']['amount']; ?> Bs x <?php echo $planes_precios[$id_plan]['VEF']['periocidad']; ?> Meses</span></li>
-                    <li><span>Ext.: <?php echo $planes_precios[$id_plan]['USD']['amount']; ?> $ x <?php echo $planes_precios[$id_plan]['USD']['periocidad']; ?> Meses</span></li>
+                    <li><span>Ven.: <?php echo $planes_precios[$id_plan]['VEF']['amount'] < 0.01?'GRATIS':$planes_precios[$id_plan]['VEF']['amount'].' Bs x '.$planes_precios[$id_plan]['VEF']['periocidad'].' Meses'; ?></span></li>
+                    <li><span>Ext.: <?php echo $planes_precios[$id_plan]['USD']['amount'] < 0.01?'GRATIS':$planes_precios[$id_plan]['USD']['amount'].' $ x '.$planes_precios[$id_plan]['USD']['periocidad'].' Meses'; ?></span></li>
                     <li><a href="login.php"><?php echo $planes_precios[$id_plan]['VEF']['max_request_per_hour']; ?> consultas por Hora</a></li>
                     <li><a href="login.php"><?php echo (bool)$planes_precios[$id_plan]['VEF']['show_names']?'':'No '; ?>Incluye Nombre Completo</a></li>
                     <li><a href="login.php"><?php echo (bool)$planes_precios[$id_plan]['VEF']['show_rif']?'':'No '; ?> Incluye RIF</a></li>

@@ -45,7 +45,7 @@
     if(!$error && !$plan_db)
         $error = 'El plan seleccionado no existe o no se encuentra activo para la venta en este momento.';
 
-    if(!$error && User::isAdmin()){
+    if(!$error && (User::isAdmin() || $plan_db['amount'] < 0.01)){
         $id_service = false;
         if($service) {
             $id_service = (int)$service['id_service'];
@@ -67,7 +67,7 @@
             $id_service,
             secInjection($plan_db['currency']),
             secInjection('0.0'),
-            secInjection('SuperUser-'.time()),
+            secInjection((User::isAdmin()?'SuperUser-':'Gratis-').time()),
             date('Y-m-d H:i:s', strtotime('+'.$plan_db['periocidad'].' month')),
             secInjection(print_r($_POST, true))
         ));
