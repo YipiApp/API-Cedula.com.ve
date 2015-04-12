@@ -44,9 +44,9 @@
 
     if(!$error && !$plan_db)
         $error = 'El plan seleccionado no existe o no se encuentra activo para la venta en este momento.';
-    
+
     if(!$error && !User::isAdmin() && $plan_db['amount'] < 0.01) {
-        $other_free = $db->ls("SELECT * FROM api_invoices 
+        $other_free = $db->ls("SELECT * FROM api_invoices
                 INNER JOIN api_services ON api_invoices.id_service = api_services.id_service
                 WHERE api_services.id_service != '%d' AND api_services.id_usuario = '%d'
                       AND api_services.proximo_corte > NOW()",
@@ -164,36 +164,41 @@
         $preference_data['payment_methods']['excluded_payment_types'][] = array('id' => 'bank_transfer');
         $preference_data['payment_methods']['excluded_payment_types'][] = array('id' => 'atm');
         $preference_data['payment_methods']['excluded_payment_types'][] = array('id' => 'ticket');
+        $preference = false;
+
         try
         {
             $preference = $mp->create_preference($preference_data);
         }
         catch(Exception $error)
         {
-            echo ('Error conectando a MercadoPago: ').print_r($error, true).print_r($preference_data, true);
+            echo 'Error conectando a MercadoPago';
+            //print_r($error, true).print_r($preference_data);
         }
 
-        if (MERCADOPAGO_SANDBOX)
-            $init_point = $preference['response']['sandbox_init_point'];
-        else
-            $init_point = $preference['response']['init_point'];
-        ?>
-        <a href="<?php echo $init_point; ?>" id="botonMP" name="MP-Checkout" class="lightblue-M-Ov-VeOn" mp-mode="modal" onreturn="execute_my_onreturn_ve">
-            Pagar
-        </a>
-        <style>
-            #MP-Checkout-dialog {
-                z-index: 200000 !important;
-            }
-        </style>
-        <script type="text/javascript" src="https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js"></script>
-        <script type="text/javascript">
-            function execute_my_onreturn_ve(data) {
-                console.log(data);
-                window.location.href="<?php echo str_replace('payment.php', 'login.php', ACTUAL_URL); ?>?external_reference="+data.external_reference+"&collection_status="+data.collection_status;
-            }
-        </script>
-        <?php
+		if($preference && isset($preference['response'])){
+			if (MERCADOPAGO_SANDBOX)
+				$init_point = $preference['response']['sandbox_init_point'];
+			else
+				$init_point = $preference['response']['init_point'];
+			?>
+			<a href="<?php echo $init_point; ?>" id="botonMP" name="MP-Checkout" class="lightblue-M-Ov-VeOn" mp-mode="modal" onreturn="execute_my_onreturn_ve">
+				Pagar
+			</a>
+			<style>
+				#MP-Checkout-dialog {
+					z-index: 200000 !important;
+				}
+			</style>
+			<script type="text/javascript" src="https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js"></script>
+			<script type="text/javascript">
+				function execute_my_onreturn_ve(data) {
+					console.log(data);
+					window.location.href="<?php echo str_replace('payment.php', 'login.php', ACTUAL_URL); ?>?external_reference="+data.external_reference+"&collection_status="+data.collection_status;
+				}
+			</script>
+			<?php
+		}
     } ?></center></div>
 <div class="clearfix"> </div>
 <?php } ?>

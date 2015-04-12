@@ -25,7 +25,7 @@
                 removalDelay: 300,
                 mainClass: "my-mfp-zoom-in"
         });
-        //$("#showCNSL").modal("show"); 
+        //$("#showCNSL").modal("show");
     });
     </script>';
     $menu_select = 'index';
@@ -40,7 +40,7 @@
         <h4 class="modal-title">CNSL 2015</h4>
       </div>
       <div class="modal-body">
-        <p>El sistema sera presentado de manera formal en el <a href="http://www.cnsl.org.ve/?page_id=218" target="_blank">Congreso Nacional de Software Libre - Edo. Aragua, Venezuela</a>. 
+        <p>El sistema sera presentado de manera formal en el <a href="http://www.cnsl.org.ve/?page_id=218" target="_blank">Congreso Nacional de Software Libre - Edo. Aragua, Venezuela</a>.
         Programada para el día 11 de Abril del 2015 a las 03:00pm en "Av Bolívar Sector la Romana Edificio INCES". Si tienes dudas de nuestro sistema te estaremos esperando!
         </p>
       </div>

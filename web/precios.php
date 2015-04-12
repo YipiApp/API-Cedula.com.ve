@@ -11,7 +11,7 @@
     $html_description = 'Los precios el bolivares sólo aplican para los residentes en Venezuela (I.V.A. incluido), para el resto del mundo aplica tarifa internacional en dolares.';
     $menu_select = 'precios';
     include('header.php');
-    
+
     $planes_db = $db->ls("SELECT planes.*, precios.* FROM api_planes planes INNER JOIN api_precio_planes precios ON planes.id_plan = precios.id_plan".(User::isAdmin()?'':' AND planes.activo = 1'), array(), false);
 
     $planes = array();

@@ -437,7 +437,7 @@ foreach($planes_db as $plan){
 <div id="new-app" style="display:none" class="col-md-6">
     <form method="POST" action="<?php echo ACTUAL_URL; ?>?op=new_app">
         <?php echo select('id_plan', 'Plan', 'Seleccione el plan que comprará', $planes); ?>
-        <?php echo select('currency', 'Forma de Pago', '', array('USD'=>'Pagar en U$D','VEF'=>'Pagar en Bsf.')); ?>
+        <?php echo select('currency', 'Forma de Pago', '', array('USD'=>'Extranjero','VEF'=>'Venezolano')); ?>
         <button type="button" onclick="$('#new-app').hide()" class="btn btn-info">Cancelar</button>
         <button type="submit" class="btn btn-default navbar-btn">Comprar</button>
     </form>
