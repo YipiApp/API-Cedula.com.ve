@@ -1,2 +1,3 @@
 web/lib/settings.php
 *.psd
+/web/nbproject/

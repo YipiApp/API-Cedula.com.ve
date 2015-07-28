@@ -177,7 +177,6 @@ function search_cne(rif, nacionalidad, cedula, res_ced) {
 
         post_req.on('error', function(err) {
             console.log('CNE error 2 ('+cedula+'): ' + JSON.stringify(err));
-            listCI.push(cedula);
             res_ced(false);
         });
         post_req.end();
