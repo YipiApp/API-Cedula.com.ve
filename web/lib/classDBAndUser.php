@@ -441,6 +441,7 @@
             $from_mail = EMAIL_FROM_MAIL;
 
         $mail = new PHPMailer();
+        $mail->CharSet = "UTF-8";
         
         if(EMAIL_SENDER == 'mail'){
             $mail->isMail();

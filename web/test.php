@@ -113,12 +113,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <br /><div class="clearfix"> </div>    <br />
         <div class="heading"><span>Datos Encontrados</span></div>
         <div class="col-md-12">
+            <div class="col-md-6"><b>Cedula</b></div><div class="col-md-5"><?php echo $user['cedula']; ?></div>
+            <div class="col-md-6"><b>R.I.F.</b></div><div class="col-md-5"><?php echo $user['rif']; ?></div>
             <div class="col-md-6"><b>Nombre</b></div><div class="col-md-5"><?php echo $user['primer_nombre']; ?> <?php echo isset($user['segundo_nombre'])?$user['segundo_nombre']:""; ?> <?php echo $user['primer_apellido']; ?> <?php echo isset($user['segundo_apellido'])?$user['segundo_apellido']:""; ?></div>
             <?php if($user['cne']) { ?>
             <div class="col-md-6"><b>Estado donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['estado']; ?></div>
             <div class="col-md-6"><b>Municipio donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['municipio']; ?></div>
             <div class="col-md-6"><b>Parroquia donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['parroquia']; ?></div>
             <div class="col-md-6"><b>Centro Electoral</b></div><div class="col-md-5"><?php echo $user['cne']['centro_electoral']; ?></div>
+            <div class="col-md-6"><b>Ultima Actualización del CNE</b></div><div class="col-md-5">Abril - 2012</div>
             <?php } ?>
         </div>
         <?php
@@ -141,6 +144,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
 </div>
 </form>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '<?php echo GOOGLE_ANALYTICS_KEY; ?>', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 
 </html>

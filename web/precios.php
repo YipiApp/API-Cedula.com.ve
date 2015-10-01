@@ -41,7 +41,7 @@
                     <li><a href="login.php"><?php echo (bool)$planes_precios[$id_plan]['VEF']['show_rif']?'':'No '; ?> Incluye RIF</a></li>
                     <li><a href="login.php">99.9% Uptime</a></li>
                 </ul>
-                <a class="order-btn" href="login.php">Comprar Ya</a>
+                <a class="order-btn" href="login.php">Contratalo Ya!</a>
             </div>
          </div>
         <?php

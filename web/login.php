@@ -60,6 +60,27 @@
                     header('location: login.php');
                 else
                     $error = 'Usuario o clave Inválida';
+            }else if($_GET['op']=='resend'){
+                if(!checkRecaptchar(RECAPTCHAR_SECRET, $_POST['g-recaptcha-response']))
+                    $error = 'reCAPTCHA Inválido';
+                else
+                {
+                    //print_r($_POST);
+                    $userResend = User::getUserByUsername($_POST['user']);
+                    if(!$userResend)
+                        $userResend = User::getUserByMail(strtolower($_POST['user']));
+
+                    //print_r($userResend);
+                    if($userResend) {
+                        if(email($userResend->mail, 'Confirmación de Registro', 'Sr(a). '.$userResend->name.',<br /><br />Para completar el registro haga click en el siguiente link: '.ACTUAL_URL.'?op=validate&user='.$userResend->user.'&token='.md5($userResend->user.SEMILLA_NEW_USER).'</b>')){
+                            $msj = 'Se le envió un correo electrónico nuevamente.';
+                        }else{
+                            $error = 'Ocurrió un error interno, intente más tarde.';
+                        }
+                    }else{
+                        $error = 'Usuario o E-Mail no está registrado';
+                    }
+                }
             }else if($_GET['op']=='forgot'){
                 if(!checkRecaptchar(RECAPTCHAR_SECRET, $_POST['g-recaptcha-response']))
                     $error = 'reCAPTCHA Inválido';
@@ -290,6 +311,7 @@ if(!$isLogin) {
             <div id="recaptcha1" class="g-recaptcha"></div>
             <button type="submit" class="btn btn-default navbar-btn">Iniciar Sesión</button>
             <br /><a href="javascript:void(0)" onclick="$('#forgot-login').show()">¿Olvidó su contraseña?</a>
+            <br /><a href="javascript:void(0)" onclick="$('#resend-login').show()">¿No le llego el correo de confirmación?</a>
         </form>
     </div>
     <div class="clearfix"> </div>
@@ -301,6 +323,20 @@ if(!$isLogin) {
             <form method="POST" action="<?php echo ACTUAL_URL; ?>?op=forgot">
                 <?php echo input('user', 'Usuario o E-Mail'); ?>
                 <div id="recaptcha2" class="g-recaptcha"></div>
+                <button type="submit" class="btn btn-default navbar-btn">Recuperar Contraseña</button>
+            </form>
+        </div>
+        <div class="clearfix"> </div>
+        <br /><br />
+    </div>
+    <br /><br />
+    <div id="resend-login" style="display:none">
+
+        <div class="heading"><span>Re-envio de correo de confirmación</span></div>
+        <div class="col-md-6">
+            <form method="POST" action="<?php echo ACTUAL_URL; ?>?op=resend">
+                <?php echo input('user', 'Usuario o E-Mail'); ?>
+                <div id="recaptcha4" class="g-recaptcha"></div>
                 <button type="submit" class="btn btn-default navbar-btn">Recuperar Contraseña</button>
             </form>
         </div>
@@ -330,6 +366,10 @@ if(!$isLogin) {
           'theme' : 'light'
         });
         grecaptcha.render('recaptcha3', {
+          'sitekey' : '<?php echo RECAPTCHAR_KEY; ?>', //Replace this with your Site key
+          'theme' : 'light'
+        });
+        grecaptcha.render('recaptcha4', {
           'sitekey' : '<?php echo RECAPTCHAR_KEY; ?>', //Replace this with your Site key
           'theme' : 'light'
         });
