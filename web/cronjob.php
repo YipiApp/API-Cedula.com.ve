@@ -15,6 +15,8 @@
         global $db;
         email($d['mail'], 'Notificación de Vencimiento', 'Su APP vencera el '.$d['proximo_corte'].', si no desea que su servicio sea suspendido porfavor renuevalo en el siguiente link: http://cedula.com.ve/web/login.php');
         $db->qs("UPDATE api_services SET last_remember = NOW() WHERE id_service = %d", array($d['id_service']));
+        if(strtotime($d['proximo_corte']) < time())
+            $db->qs("UPDATE api_services SET activo = 0 WHERE id_service = %d", array($d['id_service']));
     }
 
     $notify = $db->ls("SELECT * FROM api_services
