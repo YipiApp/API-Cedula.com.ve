@@ -73,27 +73,16 @@
 
         return $result;
     }
-?><!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---><!DOCTYPE HTML>
-<html>
-<head>
-<title>DEMO - API - Consultas de Cedulas Venezolanas</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="api,cedula,cedulas,venezuela,venezolanas,venezolanos,consultas,webservice,json" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<meta name="robots" content="nofollow" />
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
+    $html_title = 'DEMO - API - Consultas de Cedulas Venezolanas';
+    $html_description = 'Demo del API de cedulas Venezolanas';
+    $menu_select = '';
+    include('header.php');
+?>
 <form action="<?php echo ACTUAL_URL; ?>" method="POST">
+<div class="clearfix"> </div>
+<br />
+<br />
+<div class="clearfix"> </div>
 <div class="container">
     <?php if($error) echo '<div class="alert alert-danger" role="alert">'.$error.'</div>'; ?>
     <?php if($msj) echo '<div class="alert alert-success" role="alert">'.$msj.'</div>'; ?>
@@ -113,12 +102,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <br /><div class="clearfix"> </div>    <br />
         <div class="heading"><span>Datos Encontrados</span></div>
         <div class="col-md-12">
+            <div class="col-md-6"><b>Cedula</b></div><div class="col-md-5"><?php echo $user['cedula']; ?></div>
+            <div class="col-md-6"><b>R.I.F.</b></div><div class="col-md-5"><?php echo $user['rif']; ?></div>
             <div class="col-md-6"><b>Nombre</b></div><div class="col-md-5"><?php echo $user['primer_nombre']; ?> <?php echo isset($user['segundo_nombre'])?$user['segundo_nombre']:""; ?> <?php echo $user['primer_apellido']; ?> <?php echo isset($user['segundo_apellido'])?$user['segundo_apellido']:""; ?></div>
             <?php if($user['cne']) { ?>
             <div class="col-md-6"><b>Estado donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['estado']; ?></div>
             <div class="col-md-6"><b>Municipio donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['municipio']; ?></div>
             <div class="col-md-6"><b>Parroquia donde Vota</b></div><div class="col-md-5"><?php echo $user['cne']['parroquia']; ?></div>
             <div class="col-md-6"><b>Centro Electoral</b></div><div class="col-md-5"><?php echo $user['cne']['centro_electoral']; ?></div>
+            <div class="col-md-6"><b>Ultima Actualización del CNE</b></div><div class="col-md-5">Abril - 2012</div>
             <?php } ?>
         </div>
         <?php
@@ -151,6 +143,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   ga('send', 'pageview');
 
 </script>
-</body>
-
-</html>
+<?php
+    include('footer.php');

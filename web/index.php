@@ -82,7 +82,7 @@
              <h1 class="m_head rollIn">API de Consulta de Cédulas Venezolanas<br> Ideal para tu Negocio o Punto de Venta</h1>
              <div class="video_buttons">
                  <div class="video_right">
-                           <a class="fa-btn btn-1 btn-1e popup-with-zoom-anim" href="#small-dialog">
+                           <a class="fa-btn btn-1 btn-1e" href="test.php">
                             <p class="video_desc">Pruébalo Gratis!</p>
                         </a>
                            <a class="fa-btn btn-1 btn-1e" href="http://wiki.cedula.com.ve/" target="_blank">
