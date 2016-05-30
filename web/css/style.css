@@ -69,7 +69,7 @@ body a{
 .menu{
 	 float:left;
 	 margin: 18px 0 0 150px;
-	 width: 63.5555%;
+	 width: 100%;
 }
 .menu li{
 	display:inline-block;
@@ -801,7 +801,7 @@ ul.phone {
 	margin: 5px 10px;
 }
 .menu {
-	width: 70.5555%;
+	width: 100%;
 }
 }
 @media (max-width:1024px){

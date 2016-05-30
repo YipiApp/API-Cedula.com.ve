@@ -73,7 +73,7 @@
 
         return $result;
     }
-    $html_title = 'DEMO - API - Consultas de Cedulas Venezolanas';
+    $html_title = 'DEMO - API';
     $html_description = 'Demo del API de cedulas Venezolanas';
     $menu_select = '';
     include('header.php');
@@ -90,8 +90,9 @@
         <?php echo input('vat', 'Cedula de Identidad', $_POST['vat']); ?>
         <div id="recaptcha1" class="g-recaptcha"></div>
         <button type="submit" class="btn btn-default navbar-btn">Consultar</button>
-        <a target="_blank" href="http://wiki.cedula.com.ve/index.php/Documentaci%C3%B3n_del_API_Cedula:Limitaci%C3%B3n_general_de_responsabilidad">¿Como se obtienen los datos?</a>
-        <script src='https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit' async defer></script>
+        <br /><a target="_blank" href="http://wiki.cedula.com.ve/index.php/Documentaci%C3%B3n_del_API_Cedula:Limitaci%C3%B3n_general_de_responsabilidad">¿Como se obtienen los datos?</a>
+        <br /><a href="/web/app.php">Ahora tambien puedes usarlo desde tu Móvil</a>
+        <br /><script src='https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit' async defer></script>
     </div>
     <?php if(isset($consulta)) {
         $data = json_decode($consulta, true);

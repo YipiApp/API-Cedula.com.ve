@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Consulta de Cedula Venezolana</string>
+    <string name="buscar">Buscar Cedula</string>
+</resources>

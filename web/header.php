@@ -34,7 +34,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <?php if(isset($html_tags_header)) echo $html_tags_header; ?>
 </head>
 <body>
+<!--
 <a href="https://github.com/DesarrollosCuado/API-Cedula.com.ve"><img id="forkMeGitHub" style="position: absolute; top: 0; left: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/left-green@2x.png" alt="Fork me on GitHub"></a>
+-->
 <?php
 if(!isset($html_show_body) || $html_show_body) {
 ?>
@@ -50,6 +52,7 @@ if(!isset($html_show_body) || $html_show_body) {
                           <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                             <ul class="nav" id="nav">
                                 <li <?php if($menu_select == 'index') echo 'class="active"'; ?>><a href="index.php">API</a></li>
+                                <li <?php if($menu_select == 'app') echo 'class="active"'; ?>><a href="app.php">App Móvil Gratis</a></li>
                                 <li <?php if($menu_select == 'precios') echo 'class="active"'; ?>><a href="precios.php">Precios</a></li>
                                 <li <?php if($menu_select == 'login') echo 'class="active"'; ?>><a href="login.php">Registro / Login</a></li>
                                 <div class="clearfix"></div>
@@ -68,6 +71,17 @@ if(!isset($html_show_body) || $html_show_body) {
     </div>
 </div>
 <div class="container">
+<br />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Bloque Principal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9479934019359584"
+     data-ad-slot="5268660756"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <?php
 
 }

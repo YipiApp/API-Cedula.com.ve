@@ -62,6 +62,7 @@
                   <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                     <ul class="nav" id="nav">
                         <li class="active"><a href="index.php">API</a></li>
+                        <li><a href="app.php">App Móvil Gratis</a></li>
                         <li><a href="precios.php">Precios</a></li>
                         <li><a href="login.php">Registro / Login</a></li>
                         <div class="clearfix"></div>
@@ -101,6 +102,16 @@
 <div class="main">
      <div class="content_top">
          <div class="container">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Bloque Principal -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9479934019359584"
+                 data-ad-slot="5268660756"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             <div class="wmuSlider example1">
                <div class="wmuSliderWrapper">
                    <article style="position: absolute; width: 100%; opacity: 0;">
