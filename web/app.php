@@ -28,7 +28,7 @@
     <div class="col-md-12">
         <div class="col-md-4"><b>1) Descargar e Instalar Telegram:</b></div><div class="col-md-7"><a href="https://telegram.org/dl/ios" target="_blank">iPhone/iPad</a> / <a href="https://telegram.org/dl/android" target="_blank">Android</a> / <a href="https://telegram.org/dl/wp" target="_blank">Windows Phone</a> / <a href="https://web.telegram.org/" target="_blank">Desktop Linux/Windows/Mac</a></div>
         <div class="clearfix"> </div><br />
-        <div class="col-md-4"><b>2) Agregar nuestro Bot a tus contactos:</b></div><div class="col-md-7"><a href="http://telegram.me/CedulaBot">@CedulaBot</a></div>
+        <div class="col-md-4"><b>2) Agregar nuestro Bot a tus contactos:</b></div><div class="col-md-7"><a href="http://telegram.me/CedulaBot" target="_blank">@CedulaBot</a></div>
         <div class="clearfix"> </div><br />
         <div class="col-md-4"><b>3.1) Escribele un mensaje con el siguiente formato:</b></div><div class="col-md-7">/cedula [numero_de_cedula], ejemplo: /cedula 11222333 y respondera:</div>
         <div class="clearfix"> </div><br /><center><img src="/web/images/ejemplo-telegram.png" /></center><br /><br /><br />

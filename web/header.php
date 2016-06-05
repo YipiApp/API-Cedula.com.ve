@@ -60,10 +60,10 @@ if(!isset($html_show_body) || $html_show_body) {
                             <script type="text/javascript" src="js/responsive-nav.js"></script>
                     </div>
            </div>
-          <ul class="phone">
+          <!-- <ul class="phone">
               <li><i style="color:white" class="glyphicon glyphicon-info-sign"> </i></li>
               <li><p style="color:white">soporte@cedula.com.ve</p></li>
-          </ul>
+          </ul> -->
           <div class="clearfix"> </div>
        </div>
        <div class="clearfix"></div>
@@ -81,7 +81,7 @@ if(!isset($html_show_body) || $html_show_body) {
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script> -->
-<center><iframe scrolling="no" style="border: 0; width: 728px; height: 90px;" src="//coinurl.com/get.php?id=52255"></iframe></center>
+<center><iframe scrolling="no" style="border: 0; width: 100%; max-width: 728px; height: 90px;" src="//coinurl.com/get.php?id=52255"></iframe></center>
 <?php
 
 }

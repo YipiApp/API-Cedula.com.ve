@@ -107,8 +107,13 @@ body a{
 .nav ul {
     list-style: none;
 }
+@media screen and (max-width:995px) {
+    .header {
+        background: #0099DF;
+    }
+}
 @media screen and (max-width:800px) {
-	.active {
+    .active {
         display: block;
     }
     .menu li a{
