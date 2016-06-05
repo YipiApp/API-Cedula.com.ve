@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-4">
             <div class="col-md-12" style="text-align:center">
-                <p style="color:white"><i class="glyphicon glyphicon-info-sign"> </i> +(58)416-8351191</p>
+                <p style="color:white"><i class="glyphicon glyphicon-info-sign"> </i></p>
                 <p style="color:white">soporte@cedula.com.ve</p>
                 <div class="clearfix"> </div>
             </div><div class="clearfix"> </div><br /><br /><div class="clearfix"> </div>

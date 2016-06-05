@@ -94,6 +94,7 @@
         <br /><a href="/web/app.php">Ahora tambien puedes usarlo desde tu Móvil</a>
         <br /><script src='https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit' async defer></script>
     </div>
+
     <?php if(isset($consulta)) {
         $data = json_decode($consulta, true);
         if($data['data']) {
@@ -103,6 +104,7 @@
         <br /><div class="clearfix"> </div>    <br />
         <div class="heading"><span>Datos Encontrados</span></div>
         <div class="col-md-12">
+            <center><iframe scrolling="no" style="border: 0; width: 468px; height: 60px;" src="//coinurl.com/get.php?id=52256"></iframe></center>
             <div class="col-md-6"><b>Cedula</b></div><div class="col-md-5"><?php echo $user['cedula']; ?></div>
             <div class="col-md-6"><b>R.I.F.</b></div><div class="col-md-5"><?php echo $user['rif']; ?></div>
             <div class="col-md-6"><b>Nombre</b></div><div class="col-md-5"><?php echo $user['primer_nombre']; ?> <?php echo isset($user['segundo_nombre'])?$user['segundo_nombre']:""; ?> <?php echo $user['primer_apellido']; ?> <?php echo isset($user['segundo_apellido'])?$user['segundo_apellido']:""; ?></div>

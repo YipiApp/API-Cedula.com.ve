@@ -83,10 +83,10 @@
              <h1 class="m_head rollIn">API de Consulta de Cédulas Venezolanas<br> Ideal para tu Negocio o Punto de Venta</h1>
              <div class="video_buttons">
                  <div class="video_right">
-                           <a class="fa-btn btn-1 btn-1e" href="test.php">
+                           <a class="fa-btn btn-1 btn-1e" href="http://cur.lv/z4l96"><!-- test.php -->
                             <p class="video_desc">Pruébalo Gratis!</p>
                         </a>
-                           <a class="fa-btn btn-1 btn-1e" href="http://wiki.cedula.com.ve/" target="_blank">
+                           <a class="fa-btn btn-1 btn-1e" href="http://cur.lv/z4laf" target="_blank"><!-- http://wiki.cedula.com.ve/ -->
                             <p class="video_desc">Documentación</p>
                         </a>
                         <div id="small-dialog" class="mfp-hide">
@@ -102,8 +102,8 @@
 <div class="main">
      <div class="content_top">
          <div class="container">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Bloque Principal -->
+            <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Bloque Principal -- >
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-9479934019359584"
@@ -111,7 +111,8 @@
                  data-ad-format="auto"></ins>
             <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> -->
+            <center><iframe scrolling="no" style="border: 0; width: 728px; height: 90px;" src="//coinurl.com/get.php?id=52255"></iframe></center>
             <div class="wmuSlider example1">
                <div class="wmuSliderWrapper">
                    <article style="position: absolute; width: 100%; opacity: 0;">

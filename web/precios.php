@@ -23,9 +23,16 @@
     }
 ?>
    <div class="plans-head">
+       <div class="heading"><span>Código Fuente del Sistema</div>
+       <div>Nuestro sistema está publicado bajo licencia GPLv3 en GitHub, la misma puede ser consultada en <a href="https://github.com/DesarrollosCuado/API-Cedula.com.ve/" target="_blank">GitHub</a>.<br /><br />
+       <b>Comunidades relacionadas al Software Libre Venezolano que apoyan este proyecto:</b><br /><br />
+       - <a href="http://cnsl.org.ve/" target="_blank">Congreso Nacional de Software Libre</a> <a href="http://es.slideshare.net/KijamLpez/11vo-cnsl-aragua-venezuela-como-ganar-dinero-con-software-libre" target="_blank">[Ver Ponencia]</a><br />
+       - <a href="https://telegram.me/VenezuelaTG" target="_blank">[DEV] Telegram Venezuela</a><br />
+       - <a href="https://cuado.co/" target="_blank">Desarrollos Cuado C.A.</a><br /><br />
+       </div>
        <div class="heading"><span>Precios del API</span></div>
-       <div>Los precios marcados con las siglas <b>"Ven."</b> sólo aplican para los residentes en Venezuela (I.V.A. incluido), para el resto del mundo aplica tarifa <b>"Ext."</b></div>
-
+       <div>Los costos para acceder al API son debido al mantenimiento que origina el sitio web y el soporte técnico del sistema, pues la información contenida en nuestra base de datos fue obtenida de forma pública y gratuita. La data presentada actualmente por nuestro sistema, es producto de una fuerte investigación en Internet y recopilación de datos. En aproximadamente dos meses de esfuerzo, logramos hacer el primer API Venezolano que presta este tipo de servicio, el cual puede ser copiado y distribuido libremente bajo licencia GPL. Los precios marcados con las siglas <b>"Ven."</b> sólo aplican para los residentes en Venezuela (I.V.A. incluido), para el resto del mundo aplica tarifa <b>"Ext."</b></div>
+       
        <div class="heading"></div>
         <?php
         foreach($planes as $id_plan => $plan) {

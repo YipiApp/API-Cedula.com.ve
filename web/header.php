@@ -62,7 +62,6 @@ if(!isset($html_show_body) || $html_show_body) {
            </div>
           <ul class="phone">
               <li><i style="color:white" class="glyphicon glyphicon-info-sign"> </i></li>
-              <li><p style="color:white">+58 (416) 835-1191</p></li>
               <li><p style="color:white">soporte@cedula.com.ve</p></li>
           </ul>
           <div class="clearfix"> </div>
@@ -71,9 +70,9 @@ if(!isset($html_show_body) || $html_show_body) {
     </div>
 </div>
 <div class="container">
-<br />
+<br /><!--
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Bloque Principal -->
+<!-- Bloque Principal -- >
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9479934019359584"
@@ -81,7 +80,8 @@ if(!isset($html_show_body) || $html_show_body) {
      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script> -->
+<center><iframe scrolling="no" style="border: 0; width: 728px; height: 90px;" src="//coinurl.com/get.php?id=52255"></iframe></center>
 <?php
 
 }

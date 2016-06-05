@@ -238,7 +238,7 @@
         static function validpass($user, $pass)
         {
 
-            if (($us=User::getUserByUsername($user)) && $us->rol < 3)
+            if (($us=User::getUserByUsername($user))/* && $us->rol < 3*/)
             {
                 if (md5($pass . strtolower($user) . User::$keySecurity) == $us->pass)
                     return true;
@@ -442,7 +442,7 @@
 
         $mail = new PHPMailer();
         
-        if(EMAIL_SENDER == 'mail'){
+        if(EMAIL_SENDER == 'php'){
             $mail->isMail();
         }else{
             $mail->isSMTP();

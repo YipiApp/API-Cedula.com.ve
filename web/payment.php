@@ -65,7 +65,7 @@
                             ('%d','%d','%s',NOW(),'%s', 1)", array
             (
                 (int)$user->id,
-                (int)$id_plan,
+                (int)$_GET['id_plan'],
                 md5(time(). $user->id . User::$keySecurity),
                 date('Y-m-d H:i:s', strtotime('+'.$plan_db['periocidad'].' month', $service?strtotime($service['proximo_corte']):time()))
             ));
