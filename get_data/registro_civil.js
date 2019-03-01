@@ -66,7 +66,7 @@ function ci_to_rif(type, ci) {
     var final_digit_legal = false;
     if (ci.length == 9) {
         final_digit_legal = parseInt(ci[8]);
-        if (final_digit_legal!=final_digit && final_digit_legal!=0))
+        if (final_digit_legal!=final_digit && final_digit_legal!=0)
             return false;
     }
 
