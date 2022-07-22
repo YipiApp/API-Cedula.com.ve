@@ -7,7 +7,7 @@ TOKEN_CEDULA = 'TOKEN-AQUI'
 def getCI( cedula ):
 	global APPID_CEDULA
 	global TOKEN_CEDULA
-	response = urllib.request.urlopen('https://cuado.co:444/api/v1?app_id='+APPID_CEDULA+'&token='+TOKEN_CEDULA+'&cedula='+cedula).read()
+	response = urllib.request.urlopen('https://api.cedula.com.ve/api/v1?app_id='+APPID_CEDULA+'&token='+TOKEN_CEDULA+'&cedula='+cedula).read()
 	if response:
 		data = json.loads(response.decode("utf-8"))
 		if data['data']:
