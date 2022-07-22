@@ -4,7 +4,7 @@ var TOKEN_CEDULA = 'TOKEN-AQUI';
 
 function getCI(cedula, cb) {
 	request({
-		url: 'https://cuado.co:444/api/v1?app_id='+APPID_CEDULA+'&token='+TOKEN_CEDULA+'&cedula='+cedula,
+		url: 'https://api.cedula.com.ve/api/v1?app_id='+APPID_CEDULA+'&token='+TOKEN_CEDULA+'&cedula='+cedula,
 		json: true,
 		rejectUnauthorized: false
 	}, function (error, response, body) {
