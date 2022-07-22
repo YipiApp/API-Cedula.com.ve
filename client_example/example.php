@@ -14,7 +14,7 @@
 		return $curlData;
 	}
 	function getCI($cedula, $return_raw = false) {
-		$res = getCurlData("https://cuado.co:444/api/v1?app_id=".APPID_CEDULA."&token=".TOKEN_CEDULA."&cedula=".(int)$cedula);
+		$res = getCurlData("https://api.cedula.com.ve/api/v1?app_id=".APPID_CEDULA."&token=".TOKEN_CEDULA."&cedula=".(int)$cedula);
 		if($return_raw)
 			return strlen($res)>3?$res:false;
 		$res = json_decode($res, true);
