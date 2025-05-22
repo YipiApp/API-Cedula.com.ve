@@ -13,12 +13,6 @@ API - Sistema completo para puesta en funcionamiento del sitio web Cedula.com.ve
 
 - Codigos de ejemplos para consultar el API, directorio 'client_example'.
 
-## Sobre los Autores
-
-V1.0 – Creado por Kijam López B. Desarrollador de https://cuado.co/ y http://kijam.com/
-
-Para mayor información puede ingresar a http://cedula.com.ve/ o http://wiki.cedula.com.ve/
-
 ## Sobre el Uso y Licencia
 
 Todo el software publicado se puede editar, distribuir y utilizar solo bajo los terminos de la Licencia GPLv3 - Ver GPL.md
